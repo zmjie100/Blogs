@@ -106,14 +106,14 @@
       <div class="outer">
         <section id="main" class="body-wrap">
   
-    <article id="post-hjm" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-windows同一台电脑设置多个公钥与不同github帐号交互" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/Blogs/2017/09/27/hjm/"  >hjm</a>
+      <a class="article-title" href="/Blogs/2017/09/27/windows同一台电脑设置多个公钥与不同github帐号交互/"  >windows同一台电脑设置多个公钥与不同github帐号交互</a>
     </h1>
   
 
@@ -122,18 +122,51 @@
     
     <div class="article-entry " itemprop="articleBody">
       
-        <div class="article-img">
-            <a href="/Blogs/2017/09/27/hjm/" >
-                
-                <img src="https://hjm100.github.io/Blogs/images/banner.jpg" alt="hjm" title="hjm">
-                
+            
+            <p>一、生成公钥</p>
+<ol>
+<li><p>安装git，在桌面右键打开 “Git Bash”</p>
+</li>
+<li><p>键入命令：ssh-keygen -t rsa -C “hjm100@126.com”</p>
+</li>
+<li><p>提醒你输入key的名称，输入如id_rsa_hjm100;(key的名字为生成公钥或者私钥的文件名)</p>
+</li>
+<li><p>输入密码，与再次输入密码（这个密码用在你git push或git pull中使用）</p>
+</li>
+<li><p>在桌面下产生两个文件：id_rsa_hjm100和id_rsa_hjm100.pub</p>
+</li>
+<li><p>将桌面上的两个文件拷贝到C:\Users\admin.ssh里面（你也可以直接在这个.ssh文件夹中打开 “Git Bash”）</p>
+</li>
+</ol>
+<p>二、配置文件config</p>
+<ol>
+<li><p>在C:\Users\admin.ssh\目录下创建一个config文件（注意不带文件后缀）</p>
+</li>
+<li><p>复制一下代码到这个config文件中</p>
+<p>（id_rsa指向公钥的名字–最上面的可以理解为一级公钥，比如博客的提交会调用原始的公钥）</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#personal account</span></div><div class="line">Host github.com</div><div class="line">HostName github.com</div><div class="line">User git</div><div class="line">IdentityFile ~/.ssh/id_rsa</div><div class="line"></div><div class="line"><span class="comment">#work account</span></div><div class="line">Host github.com-work</div><div class="line">HostName github.com</div><div class="line">User git</div><div class="line">IdentityFile ~/.ssh/id_rsa_hjm</div></pre></td></tr></table></figure>
+<p>三、添加公钥到某个github账号</p>
+<p>1.登录自己的账号到github.com的网站上</p>
+<p>2.点击头像后点击生成下拉框中的Settings</p>
+<p>3.在设置页面点击SSH and GPG keys进入公钥管理页面</p>
+<p>4.点击New SSH key 在Title中填写名字（随意的标识）</p>
+<p>5.用记事本打开id_rsa.pub文件，复制内容，粘贴到Key输入框中保存即可</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年09月27日 18:33</p>
+        <p>原始链接： <a class="post-url" href="/Blogs/2017/09/27/windows同一台电脑设置多个公钥与不同github帐号交互/" title="windows同一台电脑设置多个公钥与不同github帐号交互">https://hjm100.github.io/Blogs/2017/09/27/windows同一台电脑设置多个公钥与不同github帐号交互/</a></p>
+        <footer>
+            <a href="https://hjm100.github.io/Blogs">
+                <img src="/Blogs/images/logo.png" alt="John Doe">
+                John Doe
             </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                
-            </p>
-        </div>
+        </footer>
+    </div>
+</div>
+
       
     </div>
     <footer class="article-footer">
@@ -143,56 +176,16 @@
                 <li><i class="fa fa-calendar"></i>2017-09-27</li>
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/Blogs/tags/web开发技术/" class="color3">web开发技术</a>
+      
+  </li>
+
         </ul>
         
-            <a href="/Blogs/2017/09/27/hjm/#more" class="article-more-link" >more&gt;&gt;</a>
-        
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/Blogs/2017/09/27/hello-world/"  >Hello World</a>
-    </h1>
-  
-
-          
-      </header>
-    
-    <div class="article-entry " itemprop="articleBody">
-      
-        <div class="article-img">
-            <a href="/Blogs/2017/09/27/hello-world/" >
-                
-                <img src="https://hjm100.github.io/Blogs/images/banner.jpg" alt="Hello World" title="Hello World">
-                
-            </a>
-        </div>
-        <div class="article-feed">
-            <p>
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on ...
-            </p>
-        </div>
-      
-    </div>
-    <footer class="article-footer">
-        
-        <ul class="article-footer-menu">
-            
-                <li><i class="fa fa-calendar"></i>2017-09-27</li>
-            
-            
-        </ul>
-        
-            <a href="/Blogs/2017/09/27/hello-world/#more" class="article-more-link" >more&gt;&gt;</a>
+            <a href="/Blogs/2017/09/27/windows同一台电脑设置多个公钥与不同github帐号交互/#more" class="article-more-link" >more&gt;&gt;</a>
         
     </footer>
   </div>
@@ -256,7 +249,7 @@
             
         </div>
         <div id="sidebar-menu-box-tags">
-            
+            <a href="/Blogs/tags/web开发技术/" style="font-size: 10px;">web开发技术</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -289,7 +282,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            
+            <a href="/Blogs/tags/web开发技术/" style="font-size: 10px;">web开发技术</a>
         </div>
     </div>
 </div>
